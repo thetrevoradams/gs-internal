@@ -1,16 +1,7 @@
 {
+  "extends": ["next", "prettier", "next/core-web-vitals"],
   "plugins": [
-    "html",
-    "json",
-    "babel",
-    "react-hooks"
-  ],
-  "extends": [
-    "next/core-web-vitals",
-    "airbnb",
-    "prettier/react",
-    "plugin:jest/recommended",
-    "plugin:prettier/recommended"
+    "prettier"
   ],
   "rules": {
     "no-console": "warn",
@@ -59,7 +50,6 @@
     "react/require-default-props": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "jest/no-large-snapshots": "error",
     "prettier/prettier": [
       "warn",
       {
@@ -70,18 +60,5 @@
         "trailingComma": "es5"
       }
     ]
-  },
-  "env": {
-    "es6": true,
-    "browser": true
-  },
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "requireConfigFile": false,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "parser": "@babel/eslint-parser"
+  }
 }
