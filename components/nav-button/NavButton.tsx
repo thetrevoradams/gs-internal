@@ -1,12 +1,13 @@
-// import React from 'react';
+import { ReactElement } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 interface Props {
   path: string
+  Icon: ReactElement
 }
 
-const NavButton = ({ path }: Props) => {
+const NavButton = ({ path, Icon }: Props) => {
   const router = useRouter()
   // <li className={router.pathname == "/" ? "active" : ""}>
 
@@ -17,8 +18,7 @@ const NavButton = ({ path }: Props) => {
           className="bg-blue-light rounded-xl text-blue flex items-center justify-center"
           style={{ height: 60, width: 60 }}
         >
-          {' '}
-          <span>Icon</span>
+          {Icon}
         </div>
         <label className="font-semibold tracking-wide">
           <small>{`${path.slice(0, 1).toUpperCase()}${path.slice(1)}`}</small>
