@@ -1,18 +1,20 @@
 import NextAuth from 'next-auth'
-import AppleProvider from 'next-auth/providers/apple'
-import EmailProvider from 'next-auth/providers/email'
+import CognitoProvider from 'next-auth/providers/cognito'
 
 export default NextAuth({
   providers: [
-    // OAuth authentication providers...
-    AppleProvider({
-      clientId: process.env.APPLE_ID,
-      clientSecret: process.env.APPLE_SECRET,
-    }),
-    // Passwordless / email sign in
-    EmailProvider({
-      server: process.env.MAIL_SERVER,
-      from: 'NextAuth.js <no-reply@example.com>',
+    // OAuth authentication provider(s)
+    CognitoProvider({
+      clientId: process.env.COGNITO_CLIENT_ID,
+      clientSecret: process.env.COGNITO_CLIENT_SECRET,
+      issuer: process.env.COGNITO_ISSUER,
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
+  // pages: {
+  // signIn: '/signin',
+  // signOut: '/auth/signout',
+  // error: '/auth/error',
+  // verifyRequest: '/auth/verify-request',
+  // },
 })

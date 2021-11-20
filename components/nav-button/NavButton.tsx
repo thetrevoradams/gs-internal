@@ -12,7 +12,7 @@ const NavButton = ({ path, Icon }: Props) => {
   // <li className={router.pathname == "/" ? "active" : ""}>
 
   return (
-    <Link href={`/${path === 'dashboard' ? '/' : path}`}>
+    <Link href={`/${path === 'dashboard' ? '' : path}`}>
       <a className="flex flex-col items-center mb-10 focus:ring-2 focus:ring-blue hover:ring-2 hover:ring-blue">
         <div
           className="bg-blue-light rounded-xl text-blue flex items-center justify-center"
