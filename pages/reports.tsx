@@ -1,8 +1,12 @@
-// import React from 'react'
-import type { NextPage } from 'next'
+import { Layout } from '../components'
 
-const Reports: NextPage = () => {
-  return <div>Reports</div>
+const Reports = () => {
+  return (
+    <Layout>
+      <div>Reports</div>
+    </Layout>
+  )
 }
 
 export default Reports
+Reports.requireAuth = true

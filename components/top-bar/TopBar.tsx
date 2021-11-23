@@ -1,11 +1,7 @@
-// import React from 'react'
 import { Bell, LogOut, Search } from '../icon'
+import { signOut } from 'next-auth/react'
 
-interface Props {
-  signOut: VoidFunction
-}
-
-const TopBar = ({ signOut }: Props) => {
+const TopBar = () => {
   return (
     <div className="bg-white p-5 w-full border-b border-gray-light flex content-end">
       <div className="flex-grow flex content-end">

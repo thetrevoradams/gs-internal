@@ -1,8 +1,12 @@
-// import React from 'react'
-import type { NextPage } from 'next'
+import { Layout } from '../components'
 
-const Debtors: NextPage = () => {
-  return <div>Debtors</div>
+const Debtors = () => {
+  return (
+    <Layout>
+      <div>Debtors</div>
+    </Layout>
+  )
 }
 
 export default Debtors
+Debtors.requireAuth = true

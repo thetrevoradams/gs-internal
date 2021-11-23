@@ -1,8 +1,12 @@
-// import React from 'react'
-import type { NextPage } from 'next'
+import { Layout } from '../components'
 
-const Tasks: NextPage = () => {
-  return <div>Tasks</div>
+const Tasks = () => {
+  return (
+    <Layout>
+      <div>Tasks</div>
+    </Layout>
+  )
 }
 
 export default Tasks
+Tasks.requireAuth = true

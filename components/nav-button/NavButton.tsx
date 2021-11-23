@@ -1,6 +1,5 @@
 import { ReactElement } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 
 interface Props {
   path: string
@@ -8,9 +7,6 @@ interface Props {
 }
 
 const NavButton = ({ path, Icon }: Props) => {
-  const router = useRouter()
-  // <li className={router.pathname == "/" ? "active" : ""}>
-
   return (
     <Link href={`/${path === 'dashboard' ? '' : path}`}>
       <a className="flex flex-col items-center mb-10 focus:ring-2 focus:ring-blue hover:ring-2 hover:ring-blue">
