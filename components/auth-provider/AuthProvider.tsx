@@ -6,10 +6,19 @@ const initialState = {
   user: null,
   session: null,
 }
+
+interface User {
+  name: string
+  email: string
+}
+interface Session {
+  user: User
+}
+
 interface State {
   initializing: boolean
-  user: null | object
-  session: null | object
+  user: null | User
+  session: null | Session
 }
 
 interface Action {

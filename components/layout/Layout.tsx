@@ -11,7 +11,9 @@ const Layout = ({ children }: Props) => {
       <SideNav />
       <div className="flex flex-col w-full">
         <TopBar />
-        <main className="bg-blue-lighter flex-grow">{children}</main>
+        <main className="bg-blue-lighter flex-grow">
+          <div className="max-w-screen-lg m-auto">{children}</div>
+        </main>
       </div>
     </div>
   )

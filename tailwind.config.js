@@ -13,6 +13,7 @@ module.exports = {
         blue: {
           lighter: '#F9FBFF',
           light: '#F4F9FF',
+          table: '#EBF2FF',
           DEFAULT: '#1485FA',
         },
         gray: {
@@ -25,9 +26,15 @@ module.exports = {
         },
       },
     },
+    boxShadow: {
+      ...defaultTheme.boxShadow,
+      DEFAULT: '0px 4px 8px rgba(183, 218, 255, 0.3)',
+    },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ['even'],
+    },
   },
   plugins: [],
 }

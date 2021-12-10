@@ -2,6 +2,8 @@ import { useState, ChangeEvent } from 'react'
 import { getProviders, signIn, getSession, getCsrfToken } from 'next-auth/react'
 
 const SignIn = ({ csrfToken }) => {
+  console.log('{ csrfToken }', { csrfToken })
+
   return (
     <>
       <form method="POST" action="/api/auth/signin/email">
