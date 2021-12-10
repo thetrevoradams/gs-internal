@@ -28,7 +28,7 @@ module.exports = {
     },
     boxShadow: {
       ...defaultTheme.boxShadow,
-      DEFAULT: '0px 4px 8px rgba(183, 218, 255, 0.3)',
+      DEFAULT: '0px 4px 16px rgba(183, 218, 255, 0.3)',
     },
   },
   variants: {

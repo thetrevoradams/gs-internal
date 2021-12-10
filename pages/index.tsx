@@ -1,38 +1,38 @@
-import { useContext } from 'react'
-import { Layout, AuthContext, Card, Table } from '../components'
+import { useEffect, useState } from 'react'
+import { Layout, Card, Table, H1, H2 } from '../components'
 
 const tableItems = {
   headings: ['Debtor', 'Reason'],
-  rows: [
-    { id: 'item1', data: ['test1', 'test6'] },
-    { id: 'item2', data: ['test2', 'test7'] },
-    { id: 'item3', data: ['test3', 'test8'] },
-    { id: 'item4', data: ['test4', 'test9'] },
-    { id: 'item5', data: ['test5', 'test10'] },
-  ],
+  rows: [],
 }
 
 const Home = () => {
-  const { initializing, user } = useContext(AuthContext)
+  // const { user } = useContext(AuthContext)
+  const [priorityRows, setPriorityRows] = useState()
 
   const fetchData = async () => {
-    const resp = await fetch('/api/hello')
+    const resp = await fetch('/api/priority')
     const json = await resp.json()
-    console.log(
-      'json',
-      json.map((item) => item.taskName)
-    )
+    if (json.length) {
+      const rows = json.map((item) => ({
+        id: item._id,
+        data: [`${item.firstName} ${item.lastName}`, item.priorityReason],
+      }))
+      setPriorityRows(rows)
+    }
   }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   return (
     <>
       <Layout>
-        <p>Signed in as {user?.email}</p>
-        <div>Dashboard</div>
-        <button onClick={fetchData}>Get basic data</button>
-        <Card className="m-10">
-          <h2 className="text-heading text-3xl ml-8 mb-4 font-extrabold">Priority List</h2>
-          <Table className="mr-4" headings={tableItems.headings} rows={tableItems.rows} />
+        <H1 className="m-8">Dashboard</H1>
+        <Card className="m-8">
+          <H2 className="ml-8 mb-4 font-extrabold">Priority List</H2>
+          <Table className="mr-4" headings={tableItems.headings} rows={priorityRows} />
         </Card>
       </Layout>
     </>

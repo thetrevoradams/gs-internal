@@ -10,7 +10,7 @@ interface Props {
 
 const Table = ({ headings = [], rows = [], className = '', showBorder = false }: Props) => {
   return (
-    <div className={showBorder ? 'border rounded-md border-blue-table' : ''}>
+    <div className={showBorder ? 'border rounded-xl border-blue-table' : ''}>
       <table className={`border-collapse table-auto w-full ${className}`}>
         {headings.length && (
           <thead>
